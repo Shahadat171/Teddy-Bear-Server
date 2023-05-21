@@ -1,0 +1,74 @@
+[
+  {
+    "image":"https://i.ibb.co/F3f0yGq/gallary3-prev-ui.png",
+    "id": "4D6F5B1E8",
+    "name": "Teddy",
+    "type": "Blackbear",
+    "price":"190",
+    "rating": "4"
+  },
+  {
+    "image":"https://i.ibb.co/Gd8vNZ1/istockphoto-157588550-170667a-prev-ui.png",
+    "id": "89Y7T3Z2A6",
+    "name": "Cuddles",
+    "type": "Grizzlybear",
+    "price":"165",
+    "rating": "5"
+  },
+  {
+    "image":"https://i.ibb.co/pXwR0N2/panda2-prev-ui.png",
+    "id": "2R9G7A3P",
+    "name": "Snuggles",
+    "type": "Panda",
+    "price":"175",
+    "rating": "3"
+  },
+  {
+    "image":"https://i.ibb.co/Gd8vNZ1/istockphoto-157588550-170667a-prev-ui.png",
+    "id": "5S2T8K1Q",
+    "name": "Buddy",
+    "type": "Blackbear",
+    "price":"125",
+    "rating": "4"
+  },
+  {
+    "image":"https://i.ibb.co/zmG9DKM/banner4-prev-ui.png",
+    "id": "3X6Y9Z2A",
+    "name": "Peanut",
+    "type": "Grizzlybear",
+    "price":"140",
+    "rating": "5"
+  },
+  {
+    "image":"https://i.ibb.co/bmppW54/panda1-prev-ui.png",
+    "id": "7P4Q1R9U",
+    "name": "Honey",
+    "type": "Panda",
+    "price":"200",
+    "rating": "3"
+  },
+  {
+    "image":"https://i.ibb.co/sgWKzJj/gallary4-prev-ui.png",
+    "id": " 6L8M2N7X",
+    "name": "Biscuit",
+    "type": "Blackbear",
+    "price": "180",
+    "rating": "5"
+  },
+  {
+    "image":"https://i.ibb.co/NFyzD55/slazzer-edit-image.png",
+    "id": " 9T5V1W6J",
+    "name": "Sugar",
+    "type": "Grizzlybear",
+    "price":"120",
+    "rating": "4"
+  },
+  {
+    "image":"https://i.ibb.co/0GwrDxN/gallary13-prev-ui.png",
+    "id": "2C7D9F4H",
+    "name": "Marshmallow",
+    "type": "Panda",
+    "price":"150",
+    "rating": "3"
+  }
+]
