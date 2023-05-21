@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
@@ -41,20 +41,49 @@ async function run() {
       res.send(result);
     });
 
-    app.get('/myTeddyBear', async (req, res) => {
-      console.log(req.query.sellerEmail)
+    app.get("/teddyBear/:type", async (req, res) => {
+      const result = await teddyBearCollection
+        .find({ type: req.params.type })
+        .toArray();
+         res.send(result);
+    });
+
+    app.get("/myTeddyBear", async (req, res) => {
       let query = {};
       if (req.query?.sellerEmail) {
-          query = { sellerEmail: req.query.sellerEmail }
+        query = { sellerEmail: req.query.sellerEmail };
       }
       const result = await teddyBearCollection.find(query).toArray();
       res.send(result);
-  })
+    });
 
     app.post("/teddyBear", async (req, res) => {
       const newTeddyBear = req.body;
       console.log(newTeddyBear);
       const result = await teddyBearCollection.insertOne(newTeddyBear);
+      res.send(result);
+    });
+
+    app.patch('/myTeddyBear/:id', async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updatedTeddyBear = req.body;
+      console.log(updatedTeddyBear);
+      const updateDoc = {
+          $set: {
+              status: updatedTeddyBear.status
+          },
+      };
+      const result = await teddyBearCollection.updateOne(filter, updateDoc);
+      res.send(result);
+  })
+
+
+    app.delete("/myTeddyBear/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log(id)
+      const query = { _id: new ObjectId(id) };
+      const result = await teddyBearCollection.deleteOne(query);
       res.send(result);
     });
 
