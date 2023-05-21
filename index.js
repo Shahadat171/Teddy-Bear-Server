@@ -57,6 +57,18 @@ async function run() {
       res.send(result);
     });
 
+    app.get('/singleTeddyBear/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) }
+
+      // const options = {
+      //     // Include only the `title` and `imdb` fields in the returned document
+      //     projection: { name: 1, price: 1, image: 1 },
+      // };
+      const result = await teddyBearCollection.findOne(query);
+      res.send(result);
+  })
+
     app.post("/teddyBear", async (req, res) => {
       const newTeddyBear = req.body;
       console.log(newTeddyBear);
