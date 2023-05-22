@@ -75,18 +75,27 @@ async function run() {
       const result = await teddyBearCollection.insertOne(newTeddyBear);
       res.send(result);
     });
-
-    app.patch('/myTeddyBear/:id', async (req, res) => {
+    
+    app.put('/updateSingleTeddyBear/:id', async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };
+      const options = { uspsert : true }
       const updatedTeddyBear = req.body;
-      console.log(updatedTeddyBear);
-      const updateDoc = {
+      const teddyBear = {
           $set: {
-              status: updatedTeddyBear.status
+            name : updatedTeddyBear.name,
+            image : updatedTeddyBear.image,
+            sellerName : updatedTeddyBear.image,
+            sellerEmail : updatedTeddyBear.sellerEmail,
+            type : updatedTeddyBear.type,
+            rating : updatedTeddyBear.rating,
+            price : updatedTeddyBear.price,
+            quantity : updatedTeddyBear.quantity,
+            description : updatedTeddyBear.description
           },
       };
-      const result = await teddyBearCollection.updateOne(filter, updateDoc);
+      console.log(teddyBear)
+      const result = await teddyBearCollection.updateOne(filter, teddyBear, options);
       res.send(result);
   })
 
