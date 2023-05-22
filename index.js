@@ -9,9 +9,6 @@ const teddyBear = require("./Data/teddyBear.json");
 
 //midleware
 
-// WDOFlT9lPFfO3qPW
-// teddy-bear
-
 app.use(cors());
 app.use(express.json());
 
@@ -34,6 +31,7 @@ async function run() {
     const teddyBearCollection = client
       .db("teddybearDB")
       .collection("teddybear");
+   
 
     app.get("/teddyBear", async (req, res) => {
       const cursor = teddyBearCollection.find();
@@ -60,11 +58,6 @@ async function run() {
     app.get('/singleTeddyBear/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) }
-
-      // const options = {
-      //     // Include only the `title` and `imdb` fields in the returned document
-      //     projection: { name: 1, price: 1, image: 1 },
-      // };
       const result = await teddyBearCollection.findOne(query);
       res.send(result);
   })
@@ -75,7 +68,7 @@ async function run() {
       const result = await teddyBearCollection.insertOne(newTeddyBear);
       res.send(result);
     });
-    
+
     app.put('/updateSingleTeddyBear/:id', async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };
@@ -105,6 +98,15 @@ async function run() {
       console.log(id)
       const query = { _id: new ObjectId(id) };
       const result = await teddyBearCollection.deleteOne(query);
+      res.send(result);
+    });
+
+    app.get("/blogs", async (req, res) => {
+      const blogsCollection = client
+      .db("blogsDB")
+      .collection("blogs");
+      const cursor = blogsCollection.find();
+      const result = await cursor.toArray();
       res.send(result);
     });
 

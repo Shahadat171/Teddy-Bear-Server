@@ -1,0 +1,18 @@
+[
+  {
+    "question":"What is an access token and refresh token? How do they work and where should we store them on the client-side?",
+    "answer":"An access token is a unique string of characters that authorize a api call by client on behalf of a specific user.It allows the user to get the targetted which may be hampered by milsicous attack.On the hand refresh token is a short time accesibility for the users that is validate by the access token.Access tokens work by providing an authentication and authorization in a system.The user or application initiates an authentication process by providing valid identity, such as a username and password.This process verifies the identity of the user or application.A developer can store this token on the local storage."
+  },
+  {
+    "question": "Compare SQL and NoSQL databases?",
+    "answer": "SQL darabase is a old stuctured relational database system that have a very rigid structure and data table that are connented to each other.SQL database stored the in a table structure and uses primary and foreign key to access the data.On the other hand NO SQL database is very easy to access and store the data ina unstructed way which is very easy to access by the users.That's why its very popular now a days."
+  },
+  {
+    "question": "What is Express.js and Node.js?",
+    "answer": "Node.js is open source javascript runtime environment that is used building and create server based web applications.As it is made almost by the javascript language, easy for the developers to use it.On the hand Express.js is a framework of Node.js which also made by javascript and connect the server and client side beautifully.Its useful for making restful api."
+  },
+  {
+    "question": "What is MongoDB aggregate and how does it work?",
+    "answer": "MongoDB aggregation means analysing and proccessing a series or broad number of data inside the collection.This proccess works by integreting a pipeliene of stages which work sequentially one by another.On document output result act as a input for the next data.By combining these stages and operators in the aggregation pipeline, one can manipulate, filter, group, sort, and analyze your data in a flexible and powerful way."
+  }
+]
