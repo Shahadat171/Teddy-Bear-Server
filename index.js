@@ -55,7 +55,27 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/sortMyTeddyBear", async (req, res) => {
+      let query = {};
+      const options = {
+        // sort matched documents in descending order by rating
+        sort: { "price": -1 },
+      };
+      if (req.query?.sellerEmail) {
+        query = { sellerEmail: req.query.sellerEmail };
+      }
+      const result = await teddyBearCollection.find(query,options).toArray();
+      res.send(result);
+    });
+
+
     app.get('/singleTeddyBear/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) }
+      const result = await teddyBearCollection.findOne(query);
+      res.send(result);
+  })
+    app.get('/getUpdateSingleTeddyBear/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) }
       const result = await teddyBearCollection.findOne(query);
